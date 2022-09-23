@@ -7,13 +7,13 @@ import ssr from 'vite-ssr/plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  ssr: {
+    external: ['reflect-metadata'],
+  },
   plugins: [ssr(), vue(), vueJsx()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-  },
-  ssr: {
-    external: ['reflect-metadata'],
   },
 });
