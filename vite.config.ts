@@ -20,6 +20,15 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+        @use "@/styles/element.scss" as *;
+        @use "@/styles/variable.scss" as *;`,
+      },
+    },
+  },
   plugins: [
     ssr(),
     vue(),
@@ -37,7 +46,7 @@ export default defineConfig({
     }),
     components({
       dts: 'src/types/components.d.ts',
-      resolvers: [ElementPlusResolver({ ssr: true })],
+      resolvers: [ElementPlusResolver({ ssr: true, importStyle: 'sass' })],
       include: [/\.vue$/, /\.vue\?vue/],
     }),
     // 自动路由插件配置

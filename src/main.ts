@@ -3,6 +3,7 @@ import { routes } from './router';
 import { ID_INJECTION_KEY } from 'element-plus';
 import createSSR from 'vite-ssr';
 import store from './store';
+import './styles/index.scss';
 
 export default createSSR(
   App,

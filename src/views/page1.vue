@@ -3,7 +3,7 @@
   <div v-for="service in appStore.services" :key="service.name">
     {{ service.name }}
   </div>
-  <div>222</div>
+  <div class="test">222</div>
 
   <ClientOnly>
     <el-menu
@@ -46,3 +46,9 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 const appStore = useStore((store) => store.app);
 </script>
+
+<style lang="scss" scoped>
+.test {
+  color: $color1;
+}
+</style>
