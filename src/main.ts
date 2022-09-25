@@ -3,6 +3,9 @@ import { routes } from './router';
 import { ID_INJECTION_KEY } from 'element-plus';
 import createSSR from 'vite-ssr';
 import store from './store';
+
+import '@unocss/reset/tailwind.css';
+import 'uno.css';
 import './styles/index.scss';
 
 export default createSSR(

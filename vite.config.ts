@@ -9,6 +9,9 @@ import layouts from 'vite-plugin-vue-layouts';
 import autoImport from 'unplugin-auto-import/vite';
 import components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import unocss from 'unocss/vite';
+import extractorPug from '@unocss/extractor-pug';
+import { extractorSplit } from '@unocss/core';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -60,6 +63,9 @@ export default defineConfig({
     layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'blank',
+    }),
+    unocss({
+      extractors: [extractorPug(), extractorSplit],
     }),
   ],
 });

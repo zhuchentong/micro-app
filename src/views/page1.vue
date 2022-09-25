@@ -3,7 +3,7 @@
   <div v-for="service in appStore.services" :key="service.name">
     {{ service.name }}
   </div>
-  <div class="test">222</div>
+  <div class="text-red-500 p-5">222</div>
 
   <ClientOnly>
     <el-menu
