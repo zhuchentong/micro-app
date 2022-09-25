@@ -1,19 +1,19 @@
-import { fileURLToPath, URL } from 'node:url';
+import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import jsx from '@vitejs/plugin-vue-jsx';
-import ssr from 'vite-ssr/plugin';
-import pages from 'vite-plugin-pages';
-import layouts from 'vite-plugin-vue-layouts';
-import autoImport from 'unplugin-auto-import/vite';
-import components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import unocss from 'unocss/vite';
-import extractorPug from '@unocss/extractor-pug';
-import { extractorSplit } from '@unocss/core';
-import icons from 'unplugin-icons/vite';
-import IconsResolver from 'unplugin-icons/resolver';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import jsx from '@vitejs/plugin-vue-jsx'
+import ssr from 'vite-ssr/plugin'
+import pages from 'vite-plugin-pages'
+import layouts from 'vite-plugin-vue-layouts'
+import autoImport from 'unplugin-auto-import/vite'
+import components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import unocss from 'unocss/vite'
+import extractorPug from '@unocss/extractor-pug'
+import { extractorSplit } from '@unocss/core'
+import icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -35,7 +35,13 @@ export default defineConfig({
     },
   },
   plugins: [
-    ssr(),
+    ssr({
+      build: {
+        serverOptions: {
+          ssr: { format: 'cjs' },
+        },
+      },
+    }),
     vue(),
     jsx(),
     autoImport({
@@ -82,4 +88,4 @@ export default defineConfig({
       scale: 1.5,
     }),
   ],
-});
+})

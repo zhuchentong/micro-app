@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
     ElMenuItem: typeof import('element-plus/lib')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/lib')['ElSubMenu']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
-    'IconPark:home': typeof import('~icons/icon-park-outline/home')['default']
     'IconParkOutline:home': typeof import('~icons/icon-park-outline/home')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
