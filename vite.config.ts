@@ -4,6 +4,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import jsx from '@vitejs/plugin-vue-jsx';
 import ssr from 'vite-ssr/plugin';
+import pages from 'vite-plugin-pages';
+import layouts from 'vite-plugin-vue-layouts';
 import autoImport from 'unplugin-auto-import/vite';
 import components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
@@ -37,6 +39,18 @@ export default defineConfig({
       dts: 'src/types/components.d.ts',
       resolvers: [ElementPlusResolver({ ssr: true })],
       include: [/\.vue$/, /\.vue\?vue/],
+    }),
+    // 自动路由插件配置
+    pages({
+      pagesDir: [{ dir: 'src/views', baseRoute: '' }],
+      exclude: ['**/components/*.vue'],
+      extensions: ['vue'],
+      routeStyle: 'nuxt',
+    }),
+    // 自动布局插件配置
+    layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'blank',
     }),
   ],
 });

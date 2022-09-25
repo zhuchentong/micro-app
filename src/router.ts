@@ -1,17 +1,10 @@
-import Page1 from './views/page1.vue';
+import generatedRoutes from 'virtual:generated-pages';
+import { setupLayouts } from 'virtual:generated-layouts';
+import type { RouteRecordRaw } from 'vue-router';
 
-export const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Page1,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import('./views/page2.vue'),
-  },
+// 自定义路由
+export const routes: RouteRecordRaw[] = [
+  // 根目录跳转
+  { path: '/', redirect: '/page1' },
+  ...setupLayouts(generatedRoutes),
 ];
