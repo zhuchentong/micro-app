@@ -6,14 +6,20 @@ import type { Express } from 'express'
 import { createSsrServer } from 'vite-ssr/dev'
 import * as compression from 'compression'
 import { isDevEnv } from 'server/shared/common'
+import { NacosService } from '../nacos/services/nacos.service'
+import { NacosModule } from '../nacos/nacos.module'
 
-@Module({})
+@Module({ imports: [NacosModule] })
 export class SSRModule implements OnModuleInit {
-  constructor(private readonly httpAdapterHost: HttpAdapterHost) {}
+  constructor(
+    private readonly httpAdapterHost: HttpAdapterHost,
+    private readonly nacos: NacosService,
+  ) {}
 
-  private async getInitialState() {
+  private getInitialState() {
     return {
-      services: [{ name: 'test-01' }, { name: 'test-02' }],
+      services: Array.from(this.nacos.configMap.values()),
+      // services: [{ name: 'test-01' }, { name: 'test-02' }],
     }
   }
 
@@ -26,7 +32,7 @@ export class SSRModule implements OnModuleInit {
       appType: 'custom',
       getRenderContext: async () => {
         return {
-          initialState: await this.getInitialState(),
+          initialState: this.getInitialState(),
         }
       },
     } as any)
@@ -59,7 +65,7 @@ export class SSRModule implements OnModuleInit {
       const url =
         request.protocol + '://' + request.get('host') + request.originalUrl
 
-      const initialState = await this.getInitialState()
+      const initialState = this.getInitialState()
       const { html, status, statusText, headers } = await render(url, {
         manifest,
         preload: true,

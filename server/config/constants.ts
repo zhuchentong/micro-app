@@ -1,0 +1,5 @@
+// NACOS
+export const NACOS_ACCESS_TOKEN = 'NACOS_ACCESS_TOKEN'
+
+// APP
+export const APP_CONFIG_LIST = 'APP_CONFIG_LIST'
