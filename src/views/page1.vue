@@ -4,6 +4,7 @@
     {{ service.name }}
   </div>
   <div class="text-red-500 p-5">222</div>
+  <icon-park-outline:home></icon-park-outline:home>
 
   <ClientOnly>
     <el-menu

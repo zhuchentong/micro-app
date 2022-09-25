@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/icon-park-outline': ^1.1.6
   '@nestjs/cli': ^9.0.0
   '@nestjs/common': ^9.0.0
   '@nestjs/core': ^9.0.0
@@ -48,6 +49,7 @@ specifiers:
   typescript: ^4.3.5
   unocss: ^0.45.22
   unplugin-auto-import: ^0.11.2
+  unplugin-icons: ^0.14.10
   unplugin-vue-components: ^0.22.7
   vite: ^3.1.3
   vite-plugin-pages: ^0.26.0
@@ -74,6 +76,7 @@ dependencies:
   vue-router: 4.1.5_vue@3.2.39
 
 devDependencies:
+  '@iconify-json/icon-park-outline': 1.1.6
   '@nestjs/cli': 9.1.3
   '@nestjs/schematics': 9.0.3_qul7ung6gmj6jydd3dgpqap7gu
   '@nestjs/testing': 9.1.2_j2ls57gnkuuvs6xhnfklmsn2o4
@@ -110,6 +113,7 @@ devDependencies:
   typescript: 4.8.3
   unocss: 0.45.22_vite@3.1.3
   unplugin-auto-import: 0.11.2_@vueuse+core@9.2.0
+  unplugin-icons: 0.14.10
   unplugin-vue-components: 0.22.7_vue@3.2.39
   vite: 3.1.3_sass@1.55.0
   vite-plugin-pages: 0.26.0_vite@3.1.3
@@ -701,6 +705,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/icon-park-outline/1.1.6:
+    resolution: {integrity: sha512-NLwjpsuQAxsbSvcJ7vdNYeyouGs9ith3CHVXMVu/iTX4skjNhPDkjpLfjwPME4zdyWAskZH5RhNaL9+gD67MNQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types/2.0.0:
@@ -6405,6 +6415,34 @@ packages:
       magic-string: 0.26.2
       unimport: 0.6.7
       unplugin: 0.9.6
+    dev: true
+
+  /unplugin-icons/0.14.10:
+    resolution: {integrity: sha512-K4KTnsiBnSPDKQS4KylOxmGYp/ALPgfN520IXhOuB2OKD5Ub5N3bNmpvMZgiMK0g3kAQdZrRRNATMSM558a3Zg==}
+    peerDependencies:
+      '@svgr/core': '>=5.5.0'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': 0.1.1
+      '@antfu/utils': 0.5.2
+      '@iconify/utils': 2.0.0
+      debug: 4.3.4
+      kolorist: 1.6.0
+      local-pkg: 0.4.2
+      unplugin: 0.9.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /unplugin-vue-components/0.22.7_vue@3.2.39:
