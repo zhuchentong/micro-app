@@ -1,3 +1,5 @@
-<template>page2</template>
+<template lang="pug">
+| page2
+</template>
 
 <script setup lang="ts"></script>
