@@ -3,7 +3,6 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import jsx from '@vitejs/plugin-vue-jsx'
-import ssr from 'vite-ssr/plugin'
 import pages from 'vite-plugin-pages'
 import layouts from 'vite-plugin-vue-layouts'
 import autoImport from 'unplugin-auto-import/vite'
@@ -14,15 +13,14 @@ import extractorPug from '@unocss/extractor-pug'
 import { extractorSplit } from '@unocss/core'
 import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import svg from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  ssr: {
-    external: ['reflect-metadata'],
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '~': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   css: {
@@ -30,20 +28,14 @@ export default defineConfig({
       scss: {
         additionalData: `
         @use "@/styles/element.scss" as *;
-        @use "@/styles/variable.scss" as *;`,
+        @use "@/styles/variables.scss" as *;`,
       },
     },
   },
   plugins: [
-    ssr({
-      build: {
-        serverOptions: {
-          ssr: { format: 'cjs' },
-        },
-      },
-    }),
-    vue(),
+    vue({ reactivityTransform: true }),
     jsx(),
+    svg(),
     autoImport({
       imports: ['vue', 'vue-router', 'vue/macros'],
       dts: 'src/types/auto-imports.d.ts',
@@ -59,7 +51,7 @@ export default defineConfig({
       dts: 'src/types/components.d.ts',
       include: [/\.vue$/, /\.vue\?vue/],
       resolvers: [
-        ElementPlusResolver({ ssr: true, importStyle: 'sass' }),
+        ElementPlusResolver({ importStyle: 'sass' }),
         IconsResolver({
           prefix: 'icon',
           alias: {
@@ -71,10 +63,11 @@ export default defineConfig({
     }),
     // 自动路由插件配置
     pages({
-      pagesDir: [{ dir: 'src/views', baseRoute: '' }],
+      pagesDir: [{ dir: 'src/apps', baseRoute: '' }],
       exclude: ['**/components/*.vue'],
       extensions: ['vue'],
       routeStyle: 'nuxt',
+      importMode: 'async',
     }),
     // 自动布局插件配置
     layouts({

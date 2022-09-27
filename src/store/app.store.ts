@@ -1,11 +1,9 @@
 import { defineStore } from 'pinia'
 
-const STORE_ID = 'app'
-
 type State = {
   ready: boolean
   loading: boolean
-  services: any[]
+  services: AppServiceConfig[]
 }
 
 const initialState: State = {
@@ -14,14 +12,20 @@ const initialState: State = {
   services: [],
 }
 
-export const store = defineStore(STORE_ID, {
+export const useAppStore = defineStore('app', {
   state: () => initialState,
   actions: {
     setReady() {
       this.ready = true
     },
-    setLoading(loading: boolean) {
+    updateLoading(loading: boolean) {
       this.loading = loading
     },
+    updateServices(services: AppServiceConfig[]) {
+      this.services = services
+    },
+  },
+  persist: {
+    paths: ['services'],
   },
 })

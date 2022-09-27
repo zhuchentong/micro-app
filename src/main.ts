@@ -1,31 +1,22 @@
 import App from './App.vue'
-import { routes } from './router'
-import { ID_INJECTION_KEY } from 'element-plus'
-import createSSR from 'vite-ssr'
-import store from './store'
-
+import { router } from './router'
+import { createApp } from 'vue'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import './styles/index.scss'
 
-export default createSSR(
-  App,
-  {
-    routes,
-    pageProps: { passToPage: false },
-    transformState(state) {
-      return import.meta.env.SSR ? JSON.stringify(state) : state
-    },
-  },
-  ({ app, initialState, isClient }) => {
-    if (!isClient) {
-      app.provide(ID_INJECTION_KEY, {
-        prefix: Math.floor(Math.random() * 10000),
-        current: 0,
-      })
-    }
+import { bootstrap } from './bootstrap'
 
-    // 安装pinia
-    store.install(app, initialState)
-  },
-)
+/**
+ * 启动项目
+ */
+async function setupApp() {
+  // 创建APP
+  const app = createApp(App).use(router)
+  // 系统初始化
+  await bootstrap(app, router)
+  // 挂在应用
+  app.mount('#app')
+}
+
+setupApp()

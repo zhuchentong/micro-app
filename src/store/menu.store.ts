@@ -1,22 +1,22 @@
 import { defineStore } from 'pinia'
 
-const STORE_ID = 'menu'
-
 type State = {
-  // 侧边菜单展开状态
+  // 侧边菜单状态
   collapsed: boolean
-  // 顶部菜单列表
-  menus: number[]
-  a: number[]
+  // 菜单列表
+  menus: MenuItem[]
 }
 
 const initialState: State = {
   collapsed: false,
   menus: [],
-  a: [1, 2, 3],
 }
 
-export const store = defineStore(STORE_ID, {
+export const useMenuStore = defineStore('menu', {
   state: () => initialState,
-  actions: {},
+  actions: {
+    updateMenus(value: MenuItem[]) {
+      this.menus = value
+    },
+  },
 })

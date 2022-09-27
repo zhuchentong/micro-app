@@ -1,4 +1,3 @@
 <template lang="pug">
-main
-  RouterView
+.div
 </template>
