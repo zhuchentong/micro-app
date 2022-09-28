@@ -1,7 +1,11 @@
+// @ts-check
+/// <reference types="@prettier/plugin-pug/src/prettier" />
+
 /**
  * @type {import('prettier').Options}
  */
 module.exports = {
+  plugins: [require.resolve('@prettier/plugin-pug')],
   // 一行最多 80 字符
   printWidth: 80,
   // 使用 2 个空格缩进
@@ -34,7 +38,7 @@ module.exports = {
   // 使用默认的折行标准
   proseWrap: 'preserve',
   // 根据显示样式决定 html 要不要折行
-  htmlWhitespaceSensitivity: 'css',
+  htmlWhitespaceSensitivity: 'ignore',
   // vue 文件中的 script 和 style 内不用缩进
   vueIndentScriptAndStyle: false,
   // 换行符使用 lf
@@ -43,9 +47,11 @@ module.exports = {
   embeddedLanguageFormatting: 'auto',
   // 每行一个属性
   singleAttributePerLine: true,
+  // TODO 查找冲突配置
   pugAttributeSeparator: 'none',
   pugEmptyAttributes: 'none',
-  pugBracketSameLine: 'true',
+  pugBracketSameLine: true,
+  pugBracketSpacing: true,
   pugSortAttributes: 'as-is',
   pugClassNotation: 'literal',
   // pugSortAttributesBeginning: [
@@ -84,5 +90,6 @@ module.exports = {
   //   'v-text',
   //   'v-html',
   // ],
-  plugins: [require.resolve('@prettier/plugin-pug')],
+  pugSingleQuote: true,
+  pugFramework: 'vue',
 }

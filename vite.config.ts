@@ -63,11 +63,13 @@ export default defineConfig({
     }),
     // 自动路由插件配置
     pages({
-      pagesDir: [{ dir: 'src/apps', baseRoute: '' }],
+      dirs: [
+        { dir: 'src/views', baseRoute: '' },
+        { dir: 'src/apps', baseRoute: '' },
+      ],
       exclude: ['**/components/*.vue'],
       extensions: ['vue'],
       routeStyle: 'nuxt',
-      importMode: 'async',
     }),
     // 自动布局插件配置
     layouts({

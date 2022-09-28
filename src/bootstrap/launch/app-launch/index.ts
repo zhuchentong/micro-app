@@ -10,7 +10,7 @@ export default function (router: Router) {
       // 更新服务列表
       updateServices()
       // 安装微服务
-      setupMicroApps()
+      // setupMicroApps()
       // 准备完毕
       store.app.setReady()
     }

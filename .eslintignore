@@ -4,3 +4,5 @@ src/http/model/*
 src/types/*
 
 scripts/**/*
+
+# .eslintrc.js

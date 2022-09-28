@@ -1,8 +1,12 @@
 <template lang="pug">
-.a 123123
+div {{ path }}
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute()
+
+const path = computed(() => route.params.all)
+</script>
 
 <script lang="ts">
 export default {
@@ -11,6 +15,7 @@ export default {
 </script>
 
 <route lang="yaml">
+name: app-1
 meta:
   layout: workspace
 </route>

@@ -6,10 +6,10 @@ export const app: AppService = {
 export const menus: AppMenu[] = [
   {
     title: 'page1',
-    path: '/page1',
+    path: 'page1',
   },
   {
     title: 'page2',
-    path: '/page2',
+    path: 'page2',
   },
 ]
