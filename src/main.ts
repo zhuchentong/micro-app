@@ -1,5 +1,5 @@
 import App from './App.vue'
-import { router } from './router'
+import createRouter from './router'
 import { createApp } from 'vue'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
@@ -11,10 +11,12 @@ import { bootstrap } from './bootstrap'
  * 启动项目
  */
 async function setupApp() {
+  const router = createRouter()
   // 创建APP
   const app = createApp(App).use(router)
   // 系统初始化
   await bootstrap(app, router)
+  await router.isReady()
   // 挂在应用
   app.mount('#app')
 

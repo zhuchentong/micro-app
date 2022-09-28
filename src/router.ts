@@ -8,7 +8,9 @@ const routes: RouteRecordRaw[] = [
   ...setupLayouts(generatedRoutes),
 ]
 
-export const router = createRouter({
-  routes,
-  history: createWebHistory(),
-})
+export default () => {
+  return createRouter({
+    routes,
+    history: createWebHistory(),
+  })
+}

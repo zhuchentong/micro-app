@@ -1,5 +1,5 @@
 <template lang="pug">
-div page1
+div page1 app -1123123zxczxc
 </template>
 
 <script lang="ts" setup></script>
