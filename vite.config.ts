@@ -23,6 +23,9 @@ export default defineConfig({
       '~': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    port: 4000,
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -63,10 +66,7 @@ export default defineConfig({
     }),
     // 自动路由插件配置
     pages({
-      dirs: [
-        { dir: 'src/views', baseRoute: '' },
-        { dir: 'src/apps', baseRoute: '' },
-      ],
+      dirs: [{ dir: 'src/views', baseRoute: '' }],
       exclude: ['**/components/*.vue'],
       extensions: ['vue'],
       routeStyle: 'nuxt',
