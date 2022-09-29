@@ -14,6 +14,7 @@ import { extractorSplit } from '@unocss/core'
 import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import svg from 'vite-svg-loader'
+import mkcert from 'vite-plugin-mkcert'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,6 +26,8 @@ export default defineConfig({
   },
   server: {
     port: 4000,
+    host: '0.0.0.0',
+    https: true,
   },
   css: {
     preprocessorOptions: {
@@ -36,6 +39,9 @@ export default defineConfig({
     },
   },
   plugins: [
+    mkcert({
+      source: 'coding',
+    }),
     vue({ reactivityTransform: true }),
     jsx(),
     svg(),
