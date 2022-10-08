@@ -1,7 +1,12 @@
 <template lang="pug">
-div page1
+div(@click='push') page1
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter()
+function push() {
+  router.push('/page2')
+}
+</script>
 
 <style lang="scss" scoped></style>

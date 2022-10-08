@@ -47,6 +47,7 @@
     "@unocss/transformer-directives": "0.45.25",
     "@vitejs/plugin-vue": "3.1.0",
     "@vitejs/plugin-vue-jsx": "2.0.1",
+    "@volar/vue-language-plugin-pug": "^1.0.0",
     "@vue/babel-preset-app": "^5.0.8",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "11.0.2",
