@@ -6,7 +6,7 @@ export default function (router: Router) {
 
   router.beforeEach(async (to, from, next) => {
     if (!store.user.current) {
-      //
+      store.user.$state = $wujie.props?.user
     }
 
     next()

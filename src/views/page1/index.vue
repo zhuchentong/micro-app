@@ -3,9 +3,12 @@ div(@click='push') page1
 </template>
 
 <script lang="ts" setup>
+import { useStore } from '@/store'
+
 const router = useRouter()
+const store = useStore()
 function push() {
-  router.push('/page2')
+  console.log(store.user.$state)
 }
 </script>
 

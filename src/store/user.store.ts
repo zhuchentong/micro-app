@@ -10,14 +10,6 @@ const initialState: State = {
   token: undefined,
 }
 
-export const useUserStore = defineStore('app', {
+export const useUserStore = defineStore('user', {
   state: () => initialState,
-  actions: {
-    updateCurrent(user: any) {
-      this.current = user
-    },
-    updateToken(token: string) {
-      this.token = token
-    },
-  },
 })
