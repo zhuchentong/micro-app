@@ -11,8 +11,24 @@ module.exports = {
     // 'plugin:react/recommended',
     // prettier规则引入&处理perttier-eslint冲突
     'plugin:prettier/recommended',
+    'plugin:jsdoc/recommended',
     './.eslintrc-auto-import.json',
   ],
+  rules: {
+    'jsdoc/newline-after-description': 'off',
+    'require-jsdoc': [
+      'error',
+      {
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: true,
+          ClassDeclaration: false,
+          ArrowFunctionExpression: false,
+          FunctionExpression: false,
+        },
+      },
+    ],
+  },
   overrides: [
     {
       files: ['**/*.{js,jsx}'],

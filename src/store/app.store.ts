@@ -18,7 +18,11 @@ export const useAppStore = defineStore('app', {
     setReady() {
       this.ready = true
     },
-    updateLoading(loading: boolean) {
+    /**
+     * 更新Loading状态
+     * @param {boolean} loading 加载状态
+     */
+    updateLoading(loading: boolean): void {
       this.loading = loading
     },
     updateServices(services: AppServiceConfig[]) {

@@ -6,3 +6,6 @@ src/types/*
 scripts/**/*
 
 # .eslintrc.js
+
+!.lintstagedrc.js
+!.eslintrc.js
