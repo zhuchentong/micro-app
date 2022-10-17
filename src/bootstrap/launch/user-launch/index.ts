@@ -10,6 +10,7 @@ export default function (router: Router) {
 
   router.beforeEach(async (to, from, next) => {
     if (!store.user.current) {
+      // 获取主应用用户信息
       store.user.$state = $wujie.props?.user
     }
 

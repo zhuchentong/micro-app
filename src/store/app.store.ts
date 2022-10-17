@@ -3,18 +3,21 @@ import { defineStore } from 'pinia'
 type State = {
   ready: boolean
   loading: boolean
-  services: AppServiceConfig[]
+  gateway: string
 }
 
 const initialState: State = {
   ready: false,
   loading: false,
-  services: [],
+  gateway: '',
 }
 
 export const useAppStore = defineStore('app', {
   state: () => initialState,
   actions: {
+    /**
+     * 更新准备状态
+     */
     setReady() {
       this.ready = true
     },
@@ -25,8 +28,12 @@ export const useAppStore = defineStore('app', {
     updateLoading(loading: boolean): void {
       this.loading = loading
     },
-    updateServices(services: AppServiceConfig[]) {
-      this.services = services
+    /**
+     * 更新Gateway
+     * @param {string} gateway 网关地址
+     */
+    updateGateway(gateway: string) {
+      this.gateway = gateway
     },
   },
   persist: {

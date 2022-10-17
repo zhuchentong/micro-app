@@ -12,7 +12,11 @@ div(@click='push') page1
  * 跳转测试
  */
 function push() {
-  //
+  window.$wujie?.bus.$emit('router:push', {
+    app: 'app-1',
+    path: '/page2',
+    query: { a: 1 },
+  })
 }
 </script>
 

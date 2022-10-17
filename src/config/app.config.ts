@@ -1,7 +1,7 @@
 import type { AppConfig } from '../types/app.config'
 
 export const appConfig: AppConfig = {
-  app: 'ihis',
+  app: 'app-1',
   title: '商城后台管理',
   logo: '/favicon.ico',
   http: {
