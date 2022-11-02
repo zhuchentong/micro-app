@@ -14,9 +14,12 @@
     "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
     "lint:stylelint": "stylelint \"src/**/*.{vue,css,scss}\" --fix",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "update:request": "npx request-generate",
+    "postupdate:request": "prettier --config ./.prettierrc-cli.js --write \"./src/http/**/*.ts\""
   },
   "dependencies": {
+    "@gopowerteam/request": "^0.1.10",
     "@vueuse/core": "9.3.0",
     "@vueuse/head": "0.7.12",
     "element-plus": "2.2.17",
@@ -35,6 +38,7 @@
     "@babel/eslint-parser": "7.19.1",
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
+    "@gopowerteam/request-generate": "^0.1.8",
     "@iconify-json/icon-park-outline": "1.1.6",
     "@prettier/plugin-pug": "2.2.0",
     "@types/node": "16",

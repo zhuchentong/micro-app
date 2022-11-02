@@ -36,7 +36,4 @@ export const useAppStore = defineStore('app', {
       this.gateway = gateway
     },
   },
-  persist: {
-    paths: ['services'],
-  },
 })
