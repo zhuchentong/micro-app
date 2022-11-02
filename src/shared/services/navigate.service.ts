@@ -1,4 +1,5 @@
 import { appConfig } from '@/config/app.config'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 type NavigatePushOption = {
   app?: string
@@ -8,7 +9,7 @@ type NavigatePushOption = {
 
 export class NavigateService {
   /**
-   * 路由导航
+   * 路由导航NavigateService
    * @param {string} path 路由路径
    * @param {NavigatePushOption} option 导航选项
    * @param {string} option.app 目标应用
@@ -23,16 +24,27 @@ export class NavigateService {
   }
 
   /**
-   * 返回当前路由参数
+   * 返回
    */
-  public get query() {
-    return
+  public back() {
+    window.$wujie?.bus.$emit('router:back')
   }
 
   /**
    * 返回当前路由参数
+   * @returns {any} query参数
+   */
+  public get query() {
+    const route = window.$wujie?.props?.route as RouteLocationNormalizedLoaded
+    return route?.query
+  }
+
+  /**
+   * 返回当前路由参数
+   * @returns {any} params参数
    */
   public get params() {
-    return
+    const route = window.$wujie?.props?.route as RouteLocationNormalizedLoaded
+    return route?.params
   }
 }
