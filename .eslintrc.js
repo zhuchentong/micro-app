@@ -28,6 +28,10 @@ module.exports = {
         },
       },
     ],
+    'jsdoc/require-param-description': ['off'],
+    'jsdoc/require-param-type': ['off'],
+    'jsdoc/require-returns-description': ['off'],
+    'jsdoc/require-returns-type': ['off'],
   },
   overrides: [
     {

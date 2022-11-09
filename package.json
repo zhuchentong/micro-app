@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@gopowerteam/request": "^0.1.10",
+    "@gopowerteam/vue-dynamic-table": "^0.0.7",
+    "@gopowerteam/vue-modal": "^0.1.12",
     "@vueuse/core": "9.3.0",
     "@vueuse/head": "0.7.12",
     "element-plus": "2.2.17",

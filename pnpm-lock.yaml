@@ -10,6 +10,8 @@ specifiers:
   '@commitlint/config-conventional': 17.1.0
   '@gopowerteam/request': ^0.1.10
   '@gopowerteam/request-generate': ^0.1.8
+  '@gopowerteam/vue-dynamic-table': ^0.0.7
+  '@gopowerteam/vue-modal': ^0.1.12
   '@iconify-json/icon-park-outline': 1.1.6
   '@prettier/plugin-pug': 2.2.0
   '@types/node': '16'
@@ -78,6 +80,8 @@ specifiers:
 
 dependencies:
   '@gopowerteam/request': 0.1.10
+  '@gopowerteam/vue-dynamic-table': 0.0.7_vue@3.2.39
+  '@gopowerteam/vue-modal': 0.1.12_vue@3.2.39
   '@vueuse/core': 9.3.0_vue@3.2.39
   '@vueuse/head': 0.7.12_vue@3.2.39
   element-plus: 2.2.17_vue@3.2.39
@@ -1706,6 +1710,26 @@ packages:
       qs: 6.11.0
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /@gopowerteam/vue-dynamic-table/0.0.7_vue@3.2.39:
+    resolution: {integrity: sha512-hFKvUy3YPgOH+/mGEfzYKyn9oCWq67uMAlQR1PZtsyPWTtRsf2M4g/Oc04OY3B5cYgXbL5CDfjbfy0x8UeGC4g==}
+    peerDependencies:
+      vue: ^3.1.0
+    dependencies:
+      dayjs: 1.11.6
+      mitt: 3.0.0
+      vue: 3.2.39
+      vxe-table: 4.3.5_vue@3.2.39+xe-utils@3.5.7
+      xe-utils: 3.5.7
+    dev: false
+
+  /@gopowerteam/vue-modal/0.1.12_vue@3.2.39:
+    resolution: {integrity: sha512-t+fcJmXaS8DZAVvfbzhgs905H82hrYXluuiSX2JrIvq10tp01mVsEWkaz3FaoCb/9cyldpoCHfTVfc0ctzJr0g==}
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      vue: 3.2.39
     dev: false
 
   /@humanwhocodes/config-array/0.10.5:
@@ -3562,6 +3586,10 @@ packages:
 
   /dayjs/1.11.5:
     resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
+    dev: false
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: false
 
   /de-indent/1.0.2:
@@ -5589,6 +5617,10 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
+  /mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
+
   /mkdirp/0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
@@ -7586,6 +7618,16 @@ packages:
       '@vue/server-renderer': 3.2.39_vue@3.2.39
       '@vue/shared': 3.2.39
 
+  /vxe-table/4.3.5_vue@3.2.39+xe-utils@3.5.7:
+    resolution: {integrity: sha512-JEvGAs7SBN1rWn5f2tkoRiXd/rAT7RfnDTTlFsHsTtASiUTKNTISI2WBsVeLkkNRTs0SXh6FgrYsIPO2soSBXA==}
+    peerDependencies:
+      vue: ^3.2.28
+      xe-utils: ^3.5.0
+    dependencies:
+      vue: 3.2.39
+      xe-utils: 3.5.7
+    dev: false
+
   /wcwidth/1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
@@ -7719,6 +7761,10 @@ packages:
     resolution: {integrity: sha512-3jaKlILY91jJihKXfHhkwzjvgsCttBzxTy64o3wjVFP1It75YhXv+D/uztLWJxzhFlUBbq8hGt7cOXqmJf1/vA==}
     dependencies:
       '@babel/runtime': 7.19.0
+    dev: false
+
+  /xe-utils/3.5.7:
+    resolution: {integrity: sha512-3H+fDBKBR2wLJgyA7k9C/w1Xljx6Maml5ukV0WDY06HjYyGs2FEz6XhcwRCLIDXX4pBP3Gu0nX9DbCeuuRA2Ew==}
     dev: false
 
   /xml-name-validator/4.0.0:

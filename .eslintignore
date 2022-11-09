@@ -1,11 +1,5 @@
 src/http/services/*
 src/http/controller/*
 src/http/model/*
-src/types/*
-
 scripts/**/*
 
-# .eslintrc.js
-
-!.lintstagedrc.js
-!.eslintrc.js

@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { ModalProvider } from '@gopowerteam/vue-modal'
 </script>
 
 <template>
-  <RouterView />
+  <modal-provider>
+    <RouterView />
+  </modal-provider>
 </template>
 
 <style scoped></style>
