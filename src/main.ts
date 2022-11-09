@@ -30,7 +30,9 @@ if (window.__POWERED_BY_WUJIE__) {
     instance = await setupApp()
   }
   window.__WUJIE_UNMOUNT = () => {
-    instance.unmount()
+    if (instance) {
+      instance.unmount()
+    }
   }
   /*
     由于vite是异步加载，而无界可能采用fiber执行机制

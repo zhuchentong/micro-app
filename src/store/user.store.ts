@@ -12,4 +12,5 @@ const initialState: State = {
 
 export const useUserStore = defineStore('user', {
   state: () => initialState,
+  actions: {},
 })

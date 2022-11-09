@@ -1,17 +1,15 @@
 <template lang="pug">
 div(@click='push') page1-
 
-button(@click='pushApp') toApp2
+button(@click='pushApp') 333{{ store.user.aaa }}
 </template>
 
 <script lang="ts" setup>
 import { useNavigate } from '@/shared/hooks/use-navigate'
+import { useStore } from '@/store'
 
 const navigate = useNavigate()
-// import { useStore } from '@/store'
-
-// const router = useRouter()
-// const store = useStore()
+const store = useStore()
 
 /**
  * 跳转测试
@@ -28,3 +26,9 @@ function pushApp() {
 </script>
 
 <style lang="scss" scoped></style>
+
+<route lang="yaml">
+name: page1
+meta:
+  title: 测试页面1
+</route>

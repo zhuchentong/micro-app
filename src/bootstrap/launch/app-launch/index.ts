@@ -17,4 +17,10 @@ export default function (router: Router) {
 
     next()
   })
+
+  router.afterEach((router) => {
+    $wujie?.bus.$emit('router:title', {
+      title: router.meta?.title,
+    })
+  })
 }
