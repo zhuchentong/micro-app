@@ -22,14 +22,6 @@ module.exports = {
       return object.operationId.replace(/Using(GET|POST|PATCH|DELETE)/g, '')
     },
     responseType: 'promise',
-    excludeQueryParams: [
-      'pageNumber',
-      'pageSize',
-      'paged',
-      'unpaged',
-      'order',
-      'sort',
-      'offset',
-    ],
+    excludeQueryParams: ['page', 'size', 'order', 'sort', 'paged', 'unpaged'],
   },
 }

@@ -15,6 +15,7 @@ import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import svg from 'vite-svg-loader'
 import mkcert from 'vite-plugin-mkcert'
+import request from '@gopowerteam/request-generate/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -87,6 +88,11 @@ export default defineConfig({
     }),
     icons({
       scale: 1.5,
+    }),
+    request({
+      alias: '~',
+      dir: 'src/http/services',
+      dts: 'src/types/request.d.ts',
     }),
   ],
 })
